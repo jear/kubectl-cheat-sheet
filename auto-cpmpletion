@@ -1,0 +1,23 @@
+yum install -y bash-completion
+ 
+cat <<EOF >> /root/.bashrc
+alias k=kubectl
+complete -F __start_kubectl k
+source <(kubectl completion bash)
+EOF
+ 
+exit
+
+# log back in
+
+
+https://stackoverflow.com/questions/55373686/how-to-switch-namespace-in-kubernetes
+
+$ alias kubens='f(){ kubectl config set-context $(kubectl config current-context) --namespace="$@";  unset -f f; }; f'
+$ kubens kube-system
+
+kubectx + kubens: Power tools for kubectl
+https://github.com/ahmetb/kubectx#installation
+
+
+https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
