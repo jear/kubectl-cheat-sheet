@@ -1,0 +1,5 @@
+kubectl patch svc postgres-service -n postgres -p '{"spec": {"type": "LoadBalancer", "externalIPs":["10.202.115.180"]}}'
+
+kubectl patch svc grafana -n istio-system -p '{"spec": {"type": "LoadBalancer"}}'
+
+kubectl patch svc kiali -n istio-system -p '{"spec": {"type": "LoadBalancer"}}'
