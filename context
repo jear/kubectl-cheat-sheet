@@ -1,19 +1,20 @@
 
+kubectx + kubens: Power tools for kubectl
+https://github.com/ahmetb/kubectx#installation
+
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+
+
 # switch namespace
 kubectl config set-context $(kubectl config current-context) --namespace=<namespace>
 kubectl config view | grep namespace
 kubectl get pods
 
 https://stackoverflow.com/questions/55373686/how-to-switch-namespace-in-kubernetes
-
- 
-
 $ alias kubens='f(){ kubectl config set-context $(kubectl config current-context) --namespace="$@";  unset -f f; }; f'
 
-$ kubens kube-system
 
- 
-
-kubectx + kubens: Power tools for kubectl
-
-https://github.com/ahmetb/kubectx#installation
+https://medium.com/@HoussemDellai/rbac-with-kubernetes-in-minikube-4deed658ea7b
