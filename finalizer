@@ -2,26 +2,6 @@ export NAMESPACE=poc-pe
 
 kubectl get ns $NAMESPACE -o json | jq '.spec.finalizers=[]' > ns-without-finalizers.json
 
-cat ns-without-finalizers.json
-{
-  "apiVersion": "v1",
-  "kind": "Namespace",
-  "metadata": {
-    "creationTimestamp": "2019-04-25T21:11:48Z",
-    "deletionTimestamp": "2019-04-25T21:11:53Z",
-    "name": "delete-me",
-    "resourceVersion": "355",
-    "selfLink": "/api/v1/namespaces/delete-me",
-    "uid": "a7e756b3-53f3-4a3d-a26b-fe794ee7954d"
-  },
-  "spec": {
-    "finalizers": []
-  },
-  "status": {
-    "phase": "Terminating"
-  }
-}
-
 # PUT the namespace without finalizers to the /finalize subresource (kubectl proxy just lets you easily use curl against the subresource):
 
 kubectl proxy &
