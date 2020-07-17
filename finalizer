@@ -1,5 +1,7 @@
+export NAMESPACE=pocpe
 
-kubectl get ns delete-me -o json | jq '.spec.finalizers=[]' > ns-without-finalizers.json
+kubectl get ns $NAMESPACE -o json | jq '.spec.finalizers=[]' > ns-without-finalizers.json
+
 cat ns-without-finalizers.json
 {
   "apiVersion": "v1",
@@ -20,10 +22,10 @@ cat ns-without-finalizers.json
   }
 }
 
-PUT the namespace without finalizers to the /finalize subresource (kubectl proxy just lets you easily use curl against the subresource):
+# PUT the namespace without finalizers to the /finalize subresource (kubectl proxy just lets you easily use curl against the subresource):
 
 kubectl proxy &
 PID=$!
-curl -X PUT http://localhost:8001/api/v1/namespaces/delete-me/finalize -H "Content-Type: application/json" --data-binary @ns-without-finalizers.json
+curl -X PUT http://localhost:8001/api/v1/namespaces/$NAMESPACE/finalize -H "Content-Type: application/json" --data-binary @ns-without-finalizers.json
 kill $PID
 
