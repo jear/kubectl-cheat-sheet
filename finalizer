@@ -1,4 +1,4 @@
-export NAMESPACE=pocpe
+export NAMESPACE=poc-pe
 
 kubectl get ns $NAMESPACE -o json | jq '.spec.finalizers=[]' > ns-without-finalizers.json
 
