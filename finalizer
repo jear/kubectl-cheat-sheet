@@ -1,4 +1,19 @@
+# Searching the API Server
+k api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n XXXXXXXXXX
 
+# Searching etcd
+k get pods -n etcd -o=jsonpath='{.items[0].metadata.name}'
+...
+
+# Orphaned APIServices
+k get APIServices
+
+# Safely Removing Resources
+k patch secret test-secret -n XXXXXXXXXX -p '{"metadata":{"finalizers":[]}}' --type=merge
+
+
+
+# Brute force : DANGER !
 kubectl proxy &
 KUBECTL_PROXY_PID=$!
 
