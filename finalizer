@@ -15,7 +15,7 @@ k patch -n my-hpe-ezmeral-csi-operator hpeezmeralcsidrivers.ezmeral.hpe.com hpee
 
 
 
-# Brute force : DANGER !
+# Brute force : DANGER ! you won't be able to delete depencies ! so you will have to re-install CRD or other objects manually
 kubectl proxy &
 KUBECTL_PROXY_PID=$!
 
