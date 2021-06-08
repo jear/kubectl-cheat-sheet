@@ -13,6 +13,11 @@ k patch secret test-secret -n XXXXXXXXXX -p '{"metadata":{"finalizers":[]}}' --t
 
 
 
+
+
+
+kubectl patch -n my-hpe-ezmeral-csi-operator hpeezmeralcsidrivers.ezmeral.hpe.com hpeezmeralcsidriver -p '{"metadata":{"finalizers":[]}}' --type="merge" 
+
 # Brute force : DANGER !
 kubectl proxy &
 KUBECTL_PROXY_PID=$!
