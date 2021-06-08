@@ -11,12 +11,9 @@ k get APIServices
 # Safely Removing Resources
 k patch secret test-secret -n XXXXXXXXXX -p '{"metadata":{"finalizers":[]}}' --type=merge
 
+k patch -n my-hpe-ezmeral-csi-operator hpeezmeralcsidrivers.ezmeral.hpe.com hpeezmeralcsidriver -p '{"metadata":{"finalizers":[]}}' --type="merge" 
 
 
-
-
-
-kubectl patch -n my-hpe-ezmeral-csi-operator hpeezmeralcsidrivers.ezmeral.hpe.com hpeezmeralcsidriver -p '{"metadata":{"finalizers":[]}}' --type="merge" 
 
 # Brute force : DANGER !
 kubectl proxy &
