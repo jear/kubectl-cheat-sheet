@@ -1,5 +1,7 @@
     # kubectl-cheat-sheet
     https://kubernetes.io/docs/reference/kubectl/cheatsheet/#kubectl-output-verbosity-and-debugging 
+    
+    https://unofficial-kubernetes.readthedocs.io/en/latest/user-guide/kubectl-cheatsheet/
 
     # install kubectl
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
