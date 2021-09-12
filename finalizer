@@ -1,11 +1,17 @@
 
+# Searching the API Server
+k api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n XXXXXXXXXX
+
+# Check CRD
+
+# beware not deleteing a service necessary for webhooks 
+
+# Tools like K8s ns killer
 git clone https://github.com/thyarles/knsk
 
 # kubectl replace
 https://craignewtondev.medium.com/how-to-fix-kubernetes-namespace-deleting-stuck-in-terminating-state-5ed75792647e
 
-# Searching the API Server
-k api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --show-kind --ignore-not-found -n XXXXXXXXXX
 
 # Searching etcd
 k get pods -n etcd -o=jsonpath='{.items[0].metadata.name}'
