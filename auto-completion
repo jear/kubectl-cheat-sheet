@@ -1,6 +1,9 @@
 yum install -y bash-completion
+
+sudo apt install -y bash-completion
+
  
-cat <<EOF >> /root/.bashrc
+cat <<EOF >> $HOME/.bashrc
 alias k=kubectl
 complete -F __start_kubectl k
 source <(kubectl completion bash)
