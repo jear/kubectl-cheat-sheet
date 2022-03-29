@@ -3,6 +3,7 @@ kubectl patch storageclass openebs-hostpath -p '{"metadata": {"annotations":{"st
 kubectl patch storageclass sc-openebs-cstor -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 
 # LB
+kubectl patch svc console -n minio-operator -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl patch svc postgres-service -n postgres -p '{"spec": {"type": "LoadBalancer", "externalIPs":["10.202.115.180"]}}'
 kubectl patch svc grafana -n istio-system -p '{"spec": {"type": "LoadBalancer"}}'
 kubectl patch svc kiali -n istio-system -p '{"spec": {"type": "LoadBalancer"}}'
