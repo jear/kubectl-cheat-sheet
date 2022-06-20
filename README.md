@@ -14,7 +14,6 @@
 
     # kubectx + kubens: Power tools for kubectl
     # https://github.com/ahmetb/kubectx#installation
-
     sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
     sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
     sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
@@ -22,4 +21,9 @@
 
 
     # DNS
-    kubectl run netutils --image=gcr.io/run-ai-lab/netutils --restart=Never -- sleep infinity
+    # kubectl run netutils --image=gcr.io/run-ai-lab/netutils --restart=Never -- sleep infinity
+    k apply -f dnsutils.yml 
+    
+    k get svc 
+    k exec -n default dnsutils -- nslookup 10.111.49.242
+    242.49.111.10.in-addr.arpa	name = spark-master.hpe-ai-coe.svc.cluster.local.
