@@ -8,6 +8,13 @@
     chmod +x kubectl 
     sudo mv kubectl /usr/local/bin
 
+    # Install helm
+    wget https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz
+    tar zxvf helm-v3.9.0-linux-amd64.tar.gz 
+    sudo cp linux-amd64/helm /usr/local/bin
+    rm -fr linux-amd64/
+    rm helm-v3.9.0-linux-amd64.tar.gz 
+
         
     # k9s https://k9scli.io/ 
     wget https://github.com/derailed/k9s/releases/download/v0.25.18/k9s_Linux_x86_64.tar.gz
