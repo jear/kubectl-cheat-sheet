@@ -7,6 +7,8 @@
     curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
     chmod +x kubectl 
     sudo mv kubectl /usr/local/bin
+    
+    # Download the kubectl Ezmeral plugin from the UI
 
     # Install helm
     wget https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz
