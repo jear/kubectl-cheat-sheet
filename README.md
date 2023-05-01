@@ -19,7 +19,7 @@
 
         
     # k9s https://k9scli.io/ 
-    wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_x86_64.tar.gz
+    wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
 
     # kubectx + kubens: Power tools for kubectl
     # https://github.com/ahmetb/kubectx#installation
