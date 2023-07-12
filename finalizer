@@ -4,7 +4,10 @@ k api-resources --verbs=list --namespaced -o name | xargs -n 1 kubectl get --sho
 
 # Check CRD
 
-# beware not deleteing a service necessary for webhooks 
+# beware not deleteing a service necessary for webhooks - check endpoints exist
+https://stackoverflow.com/questions/71768157/unable-to-delete-a-k8s-namespace
+kubectl get validatingwebhookconfigurations.admissionregistration.k8s.io
+kubectl get ep -A
 
 # Tools like K8s ns killer
 git clone https://github.com/thyarles/knsk
