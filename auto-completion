@@ -9,9 +9,7 @@ complete -F __start_kubectl k
 source <(kubectl completion bash)
 EOF
  
-exit
-
-# log back in
+. $HOME/.bashrc
 
 
 
