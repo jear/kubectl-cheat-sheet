@@ -11,15 +11,19 @@
     # Download the kubectl Ezmeral plugin from the UI
 
     # Install helm
-    wget https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz
-    tar zxvf helm-v3.9.0-linux-amd64.tar.gz 
+    HELM_RELEASE=3.15.4
+    wget https://get.helm.sh/helm-v$HELM_RELEASE-linux-amd64.tar.gz
+    tar zxvf helm-v$HELM_RELEASE-linux-amd64.tar.gz 
     sudo cp linux-amd64/helm /usr/local/bin
     rm -fr linux-amd64/
-    rm helm-v3.9.0-linux-amd64.tar.gz 
-
         
     # k9s https://k9scli.io/ 
-    wget https://github.com/derailed/k9s/releases/download/v0.27.3/k9s_Linux_amd64.tar.gz
+    K9S_RELEASE=0.32.5
+    wget https://github.com/derailed/k9s/releases/download/v$K9S_RELEASE/k9s_Linux_amd64.tar.gz
+    gunzip k9s_Linux_amd64.tar.gz && tar xf k9s_Linux_amd64.tar && rm k9s_Linux_amd64.tar
+    chmod +x k9s
+    sudo mv k9s /usr/local/bin/
+
 
     # kubectx + kubens: Power tools for kubectl
     # https://github.com/ahmetb/kubectx#installation
