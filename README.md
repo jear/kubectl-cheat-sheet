@@ -9,13 +9,13 @@
     sudo mv kubectl /usr/local/bin
     
     # Auto completion for alias
-cat <<EOF >> $HOME/.bashrc
-alias k=kubectl
-complete -F __start_kubectl k
-source <(kubectl completion bash)
-EOF
+    cat <<EOF >> $HOME/.bashrc
+    alias k=kubectl
+    complete -F __start_kubectl k
+    source <(kubectl completion bash)
+    EOF
  
-. $HOME/.bashrc
+    . $HOME/.bashrc
 
 
     # Install helm
