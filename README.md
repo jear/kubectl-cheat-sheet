@@ -8,7 +8,15 @@
     chmod +x kubectl 
     sudo mv kubectl /usr/local/bin
     
-    # Download the kubectl Ezmeral plugin from the UI
+    # Auto completion for alias
+cat <<EOF >> $HOME/.bashrc
+alias k=kubectl
+complete -F __start_kubectl k
+source <(kubectl completion bash)
+EOF
+ 
+. $HOME/.bashrc
+
 
     # Install helm
     HELM_RELEASE=3.17.3
