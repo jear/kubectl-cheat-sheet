@@ -44,6 +44,7 @@
     # DNS
     # kubectl run netutils --image=gcr.io/run-ai-lab/netutils --restart=Never -- sleep infinity
     k apply -f dnsutils.yml 
+    k apply -f ds-dnstest.yml 
     
     k get svc 
     k exec -n default dnsutils -- nslookup 10.111.49.242
