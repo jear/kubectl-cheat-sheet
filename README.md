@@ -17,6 +17,9 @@
  
     . $HOME/.bashrc
 
+    # kustomize
+    curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+
 
     # Install helm
     HELM_RELEASE=3.17.3
