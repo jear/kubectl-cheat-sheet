@@ -22,7 +22,8 @@
 
 
     # Install helm
-    HELM_RELEASE=3.17.3
+    HELM_RELEASE=3.20.0
+    HELM_RELEASE=4.1.1
     wget https://get.helm.sh/helm-v$HELM_RELEASE-linux-amd64.tar.gz
     tar zxvf helm-v$HELM_RELEASE-linux-amd64.tar.gz 
     sudo cp linux-amd64/helm /usr/local/bin
